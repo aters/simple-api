@@ -23,11 +23,13 @@ jobs:
           rm -rf simple-api
           git clone git@github.com:aters/simple-api.git
           cd simple-api
-          
+
           echo "${{ secrets.ENV }}" > .env
           npm install
 
+
           docker stop simple-api || true
+          docker rm simple-api || true
           docker build -t simple-api .
           docker run -d --name simple-api simple-api
 
