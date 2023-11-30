@@ -31,6 +31,6 @@ jobs:
           docker stop simple-api || true
           docker rm simple-api || true
           docker build -t simple-api .
-          docker run -d --name simple-api simple-api
+          docker run -p 3000:3000  -d --name simple-api simple-api
 
           cd .. && rm -rf simple-api
