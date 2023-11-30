@@ -3,7 +3,7 @@ name: Deploy to Server
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   deploy:
@@ -12,7 +12,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Set up SSH Connection
+    - name: Set up SSH Connection + Build + Run
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.HOST }}
