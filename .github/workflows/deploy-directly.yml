@@ -22,7 +22,7 @@ jobs:
         script: |
           set -e
           rm -rf simple-api
-          git clone git@github.com:aters/simple-api.git
+          git clone https://github.com/aters/simple-api.git
           cd simple-api
 
           echo "${{ secrets.ENV }}" > .env
