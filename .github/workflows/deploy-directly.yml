@@ -20,13 +20,12 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         port: ${{ secrets.PORT }}
         script: |
-          set -e
           rm -rf simple-api
           git clone https://github.com/aters/simple-api.git
           cd simple-api
 
           echo "${{ secrets.ENV }}" > .env
-          npm install
+          /home/u1/.nvm/versions/node/v18.18.2/bin/npm i
 
           # Start services with Docker Compose
           docker-compose down
