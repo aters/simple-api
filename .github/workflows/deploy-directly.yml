@@ -28,8 +28,8 @@ jobs:
           /home/u1/.nvm/versions/node/v18.18.2/bin/npm i
 
           # Start services with Docker Compose
-          docker-compose down
-          docker-compose up -d --build
+          docker compose down
+          docker compose up -d --build
 
           # Clean up
           cd .. && rm -rf simple-api
