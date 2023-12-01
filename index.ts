@@ -3,6 +3,8 @@ import { applyMiddlewares } from './middlewares';
 import postsRouter from './routes/posts';
 import usersRouter from './routes/users';
 import authRouter from './routes/auth';
+import customersRouter from './routes/customers';
+
 import { getDB } from './database';
 
 const app = express();
@@ -24,6 +26,10 @@ app.use('/users', usersRouter); // use the users router
 
 // Auth
 app.use('/auth', authRouter); // use the users router
+
+
+// Customers
+app.use('/customers', customersRouter); // use the customers router
 
 (async () => {
 	try {
